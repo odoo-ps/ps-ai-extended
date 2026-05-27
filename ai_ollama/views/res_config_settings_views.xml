@@ -1,0 +1,14 @@
+<odoo>
+    <record id="res_config_settings_view_form_ollama" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.ai.ollama</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="ai.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//block[@name="integration"]" position="inside">
+                <setting id="ollama_provider" string="Use a local Ollama instance" help="Override the Ollama base URL (default: http://localhost:11434)" groups="base.group_system">
+                    <field name="ollama_url" placeholder="http://localhost:11434" nolabel="1" class="w-100"/>
+                </setting>
+            </xpath>
+        </field>
+    </record>
+</odoo>
